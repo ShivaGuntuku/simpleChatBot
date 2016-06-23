@@ -18,6 +18,27 @@ AIML as 4 Basic Tags:
 
 other tags reference will be avilable in the reference link : http://www.alicebot.org/documentation/aiml-reference.html
 
-python module for the running AIML : 'Pip install AIML'
+#Simplest Python Program
+    python module for the running AIML : #'Pip install aiml'
+This is the simplest program we can start with. It creates the aiml object, learns the startup file, and then loads the rest of the aiml files. After that, it is ready to chat, and we enter an infinite loop that will continue to prompt the user for a message. You will need to enter a pattern the bot recognizes. The patterns recognized depend on what AIML files you loaded.
+
+We create the startup file as a separate entity so that we can add more aiml files to the bot later without having to modify any of the programs source code. We can just add more files to learn in the startup xml file.
+
+    import aiml
+
+    # Create the kernel and learn AIML files
+    kernel = aiml.Kernel()
+    kernel.learn("std-startup.xml")
+    kernel.respond("load aiml b")
+
+    # Press CTRL-C to break this loop
+    while True:
+        print kernel.respond(raw_input("Enter your message >> "))
+    
+in std_startup.xml file we can include the diffenrent aiml file according our requirement for chatbot replay process.
+    for e.g : <learn>hello.aiml</learn>
+    now 'hello.aiml' included in <learn> tag it loads the every information present in the aiml to the xml then replay to python.
+    
+    
 
 

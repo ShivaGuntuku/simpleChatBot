@@ -39,6 +39,9 @@ in std_startup.xml file we can include the diffenrent aiml file according our re
     for e.g : <learn>hello.aiml</learn>
     now 'hello.aiml' included in <learn> tag it loads the every information present in the aiml to the xml then replay to python.
     
-    
+#brain.py : python script for loading the aiml files through startup.xml
+#startup.xml : xml script for loading the AIML files
+# * .aiml : which consist of source and responce of chatbot.
+
 
 
